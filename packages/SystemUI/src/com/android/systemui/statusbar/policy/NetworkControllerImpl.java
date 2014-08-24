@@ -1159,7 +1159,7 @@ public class NetworkControllerImpl extends BroadcastReceiver
         }
     }
 
-    private String huntForSsid(WifiInfo info) {
+    String huntForSsid(WifiInfo info) {
         String ssid = info.getSSID();
         if (ssid != null) {
             return ssid;

@@ -262,7 +262,7 @@ public class PhoneStatusBar extends BaseStatusBar implements DemoMode,
     SecurityControllerImpl mSecurityController;
     BatteryController mBatteryController;
     LocationControllerImpl mLocationController;
-    NetworkControllerImpl mNetworkController;
+    public NetworkControllerImpl mNetworkController;
     HotspotControllerImpl mHotspotController;
     RotationLockControllerImpl mRotationLockController;
     UserInfoController mUserInfoController;
@@ -3082,6 +3082,8 @@ public class PhoneStatusBar extends BaseStatusBar implements DemoMode,
     }
 
     public void topAppWindowChanged(boolean showMenu) {
+        if (mPieControlPanel != null)
+            mPieControlPanel.setMenu(showMenu);
         if (DEBUG) {
             Log.d(TAG, (showMenu?"showing":"hiding") + " the MENU button");
         }
